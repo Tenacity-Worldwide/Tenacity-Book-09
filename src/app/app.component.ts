@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenavScrollViewport')
   sidenavScrollViewport!: CdkVirtualScrollViewport;
   private _currentPage = 1;
-  private readonly pagesToSkip = [6];
+  private readonly pagesToSkip = [4, 6];
 
   public get currentPage() {
     return this._currentPage;
