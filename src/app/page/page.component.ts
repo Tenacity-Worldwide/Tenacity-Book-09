@@ -92,8 +92,8 @@ export class PageComponent implements AfterViewInit {
   updateZoom() {
     if (this.container) {
       const page: HTMLDivElement = this.container.nativeElement;
-      const pageWidth = 955.91;
-      this.zoom = Math.min(1, page.parentElement!.clientWidth / pageWidth);
+      const pageWidth = 677.27;
+      this.zoom = Math.min(1.5, page.parentElement!.clientWidth / pageWidth);
     }
   }
 }
