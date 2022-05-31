@@ -1,10 +1,8 @@
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
   Input,
-  NgZone,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
@@ -17,7 +15,7 @@ import * as $ from 'jquery';
   styleUrls: ['./page.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class PageComponent implements AfterViewInit {
+export class PageComponent {
   loadState: 'loading' | 'success' | 'error' = 'loading';
   zoom = 1;
   @ViewChild('container') container!: ElementRef;
@@ -30,15 +28,8 @@ export class PageComponent implements AfterViewInit {
   }
   @Input() set pageId(value: number) {
     this._pageId = value;
+    this.updateZoom();
     this.loadContent();
-  }
-
-  constructor() {}
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.updateZoom();
-    });
   }
 
   loadContent() {
@@ -90,10 +81,10 @@ export class PageComponent implements AfterViewInit {
   }
 
   updateZoom() {
-    if (this.container) {
-      const page: HTMLDivElement = this.container.nativeElement;
-      const pageWidth = 677.27;
-      this.zoom = Math.min(1.5, page.parentElement!.clientWidth / pageWidth);
-    }
+    const pageWidth = this._pageId == 2 ? 955.91 : 677.27;
+    this.zoom = Math.min(
+      this._pageId == 2 ? 1 : 1.8,
+      window.innerWidth / pageWidth
+    );
   }
 }
