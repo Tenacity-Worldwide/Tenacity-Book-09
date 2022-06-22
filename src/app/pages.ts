@@ -2,9 +2,9 @@ import { Page, Section } from './types';
 
 const sections: Section[] = [
   { name: 'Cover', start: 1 },
-  { name: 'Introduction', start: 2 },
-  { name: 'Authors', start: 3 },
-  { name: 'Acknowledgements', start: 4, hidden: true },
+  { name: 'Authors', start: 2 },
+  { name: 'Dedication', start: 3 },
+  { name: 'Introduction', start: 4 },
   { name: 'Table of Contents', start: 5 },
   { name: 'Blank Page', start: 6, hidden: true },
   { name: 'Unit 1', start: 7, end: 24 },
@@ -27,6 +27,7 @@ const sections: Section[] = [
   { name: 'Appendix 2', start: 236, end: 238 },
   { name: 'Appendix 3', start: 239, end: 240 },
   { name: 'Appendix 4', start: 241, end: 252 },
+  { name: 'Acknowledgements', start: 253 },
 ];
 
 const pages: Page[] = [];
