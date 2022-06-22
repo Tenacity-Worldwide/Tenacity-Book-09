@@ -83,7 +83,7 @@ export class PageComponent {
   updateZoom() {
     const pageWidth = this._pageId == 2 ? 955.91 : 677.27;
     this.zoom = Math.min(
-      this._pageId == 2 ? 1 : 1.8,
+      this._pageId == 1 ? 1 : 1.8,
       window.innerWidth / pageWidth
     );
   }
