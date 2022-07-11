@@ -84,7 +84,7 @@ function setItemHeight(item) {
         break;
 
       case "video":
-        item.height = 491;
+        item.height = 325;
         break;
 
       default:
@@ -171,7 +171,7 @@ function setPage(id) {
 
     pageDiv.on({
       mousemove: function (event) {
-        guide.css({ top: event.offsetY });
+        guide.css({ top: event.offsetY / 1.5 });
       },
       click: function () {
         console.log("Position:", guide.css("top"));
