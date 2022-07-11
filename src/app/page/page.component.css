@@ -36,8 +36,8 @@
 #page video,
 #page audio {
   left: 50%;
-  width: 600px;
-  margin-left: -300px;
+  width: 400px;
+  margin-left: -200px;
 }
 
 #page iframe,
