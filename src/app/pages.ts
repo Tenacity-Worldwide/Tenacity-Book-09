@@ -41,11 +41,11 @@ sections.forEach((section) => {
   for (let i = section.start; i <= section.end; i++) {
     pages.push({
       index: i,
-      title: `${section.name} - p. ${i - 4}`,
+      title: `${section.name} - p. ${i - 6}`,
     });
   }
 
-  section.name += ` - p. ${section.start - 4}`;
+  section.name += ` - p. ${section.start - 6}`;
 });
 
 export default { sections: sections.filter((s) => !s.hidden), pages };
