@@ -9,12 +9,20 @@
 //     name: "59 SB10 U1 B1.4 P11.mp3",
 //     position: 1200,
 //   },
-//   {
-//     type: "h5p",
-//     name: "157 SB10 U1 AE1-3.html",
-//     position: 1300,
-//     height: 500,
-//   },
+// {
+//   type: "h5p",
+//   name: "145 SB9 U1 AE1-5.html",
+//   position: 595,
+//   height: 200
+// },
+// {
+//   type: "dictation",
+//   name: "U1.ASSMT.E1.TGP.6.SBP.18.TG.mp3",
+//   title: "<b>6.</b> Dictation",
+//   text: "",
+//   position: 593,
+//   height: 200
+// }
 // ];
 
 function insertContent(rootElement, items) {
@@ -87,6 +95,10 @@ function setItemHeight(item) {
         item.height = 325;
         break;
 
+      case "title":
+        item.height = 70;
+        break;
+
       default:
         throw new Error("Height not specified for item: ", item.name);
     }
@@ -94,7 +106,10 @@ function setItemHeight(item) {
 }
 
 function setItemPath(item) {
-  item.src = `assets/${item.type}/${item.name}`;
+  item.src =
+    item.type == "dictation"
+      ? `assets/audio/${item.name}`
+      : `assets/${item.type}/${item.name}`;
 }
 
 function createItemElement(item) {
@@ -104,6 +119,19 @@ function createItemElement(item) {
     case "audio":
     case "video":
       element = $(document.createElement(item.type)).prop("controls", true);
+      break;
+
+    case "title":
+      element = $(document.createElement("h1"))
+        .prop("class", "exercise")
+        .text("INTERACTIVE EXERCISES");
+      break;
+
+    case "dictation":
+      element = $(document.createElement("app-dictation")).prop({
+        title: item.title,
+        text: item.text,
+      });
       break;
 
     default:
