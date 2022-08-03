@@ -55,10 +55,7 @@ export class PageComponent {
           .find('iframe')
           .on('load', (event) => {
             const iframe = event.target;
-            iframe.contentDocument?.body.style.setProperty(
-              'zoom',
-              this.zoom.toString()
-            );
+            iframe.contentDocument!.documentElement.style.height = 'auto';
           });
       })
       .catch((err) => {
