@@ -1,13 +1,5 @@
 @import "./base.css";
 
-#page * {
-  white-space: nowrap;
-}
-
-#page .intro * {
-  white-space: normal;
-}
-
 #page .intro h3 {
   font-size: large;
 }
