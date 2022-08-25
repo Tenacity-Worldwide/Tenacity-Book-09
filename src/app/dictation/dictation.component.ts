@@ -8,6 +8,8 @@ export class DictationComponent implements OnInit {
   @Input() title?: string;
   @Input() src?: string;
   @Input() text?: string;
+  @Input('fontsize') fontSize?: string;
+  @Input('lineheight') lineHeight?: string;
   isShowingText = false;
 
   constructor() {}
